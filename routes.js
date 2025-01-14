@@ -56,8 +56,13 @@ let catalogo = {
 
 //create
 //postar uma serie ou filme
-routes.post("/",(req,res)=>{
-  catalogo.push(req.body)
+routes.post("/movies",(req,res)=>{
+  catalogo.movies.push(req.body)
+  res.status(201).send("created");
+});
+routes.post("/series",(req,res)=>{
+  catalogo.series.push(req.body)
+  res.status(201).send("created");
 });
 
 
